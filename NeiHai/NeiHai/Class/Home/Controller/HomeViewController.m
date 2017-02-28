@@ -9,6 +9,9 @@
 #import "HomeViewController.h"
 #import "HomeHeadView.h"
 #import "HomeContentView.h"
+#import "AFNetworking.h"
+
+
 @interface HomeViewController ()<HomeHeadViewDelegate, HomeContentViewDelegate>
 
 @property (nonatomic, strong) HomeHeadView *headView;
@@ -97,7 +100,7 @@
 
 - (void)info:(UITapGestureRecognizer *)tap{
 
-    
+  
 }
 
 - (void)select:(UISegmentedControl *)segment{
@@ -106,6 +109,7 @@
 }
 
 - (void)edit:(UIButton *)edit{
+
 
 }
 
