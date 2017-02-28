@@ -158,6 +158,7 @@
 		45967AF71E64142900F7DF4C /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				45CD301F1E6528CE007EFD09 /* Tool */,
 				45967AF81E64142900F7DF4C /* Discover */,
 				45967AFF1E64142900F7DF4C /* Home */,
 				45967B061E64142900F7DF4C /* Main */,
@@ -327,6 +328,13 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		45CD301F1E6528CE007EFD09 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -624,6 +632,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = M4P44B29F3;
 				INFOPLIST_FILE = NeiHai/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = www.tools.text.NeiHai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -636,6 +645,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = M4P44B29F3;
 				INFOPLIST_FILE = NeiHai/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = www.tools.text.NeiHai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -687,6 +697,7 @@
 				45967AF31E6413F500F7DF4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		45967AF41E6413F500F7DF4C /* Build configuration list for PBXNativeTarget "NeiHaiTests" */ = {
 			isa = XCConfigurationList;
@@ -695,6 +706,7 @@
 				45967AF61E6413F500F7DF4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

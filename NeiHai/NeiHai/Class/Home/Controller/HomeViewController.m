@@ -9,7 +9,7 @@
 #import "HomeViewController.h"
 #import "HomeHeadView.h"
 #import "HomeContentView.h"
-@interface HomeViewController ()
+@interface HomeViewController ()<HomeHeadViewDelegate, HomeContentViewDelegate>
 
 @property (nonatomic, strong) HomeHeadView *headView;
 @property (nonatomic, strong) HomeContentView *contentView;
@@ -23,6 +23,7 @@
     if (!_headView) {
         
       _headView =  [[[NSBundle mainBundle] loadNibNamed:@"HomeHeadView" owner:0 options:0] firstObject];
+        _headView.delegate = self;
         _headView.frame = CGRectMake(0, 64, 375, 40);
         
 
@@ -35,7 +36,7 @@
 
     if (!_contentView) {
        _contentView = [[[NSBundle mainBundle] loadNibNamed:@"HomeContentView" owner:0 options:0] firstObject];
-        
+        _contentView.delegate = self;
         _contentView.frame = CGRectMake(0, 104, 375, 563);
     }
     return _contentView;
@@ -106,5 +107,19 @@
 
 - (void)edit:(UIButton *)edit{
 
+}
+
+#pragma  mark -HomeHeadViewDelegate
+- (void)homeHeadView:(HomeHeadView *)view bindingContentWithIndexPath:(NSIndexPath *)indexPath{
+    
+    [self.contentView scrollWithIndexPath:indexPath animation:YES];
+        
+}
+
+#pragma mark -- HomeContentViewDelegate
+
+- (void)HomeContentView:(HomeContentView *)view bindingTitleWithArgs:(NSArray *)args{
+
+    [self.headView scrollWithArgs:args animation:YES];
 }
 @end

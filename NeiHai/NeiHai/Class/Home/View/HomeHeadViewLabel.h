@@ -11,6 +11,8 @@
 @interface HomeHeadViewLabel : UILabel
 
 @property (assign, nonatomic) CGFloat progress;
+
 @property (assign, nonatomic) BOOL isSelect;
 
+@property (assign, nonatomic) BOOL direction;
 @end

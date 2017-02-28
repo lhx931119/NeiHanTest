@@ -8,8 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+@class HomeHeadView;
+
+@protocol HomeHeadViewDelegate <NSObject>
+
+- (void)homeHeadView:(HomeHeadView *)view bindingContentWithIndexPath:(NSIndexPath *)indexPath;
+
+@end
+
 @interface HomeHeadView : UIView
 
+@property (nonatomic, assign) id <HomeHeadViewDelegate>delegate;
+
 - (void)select;
+
+- (void)scrollWithArgs:(NSArray *)args animation:(BOOL)animation;
 
 @end

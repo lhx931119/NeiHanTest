@@ -15,6 +15,8 @@
 
 @property (nonatomic, strong) NSArray *dataSource;
 
+@property (nonatomic, assign) CGFloat progress;
+
 @end
 
 @implementation HomeHeadView
@@ -31,6 +33,7 @@
     [super awakeFromNib];
     
     [self.collectionView registerNib:[UINib nibWithNibName:@"HomeHeadViewCell" bundle:nil] forCellWithReuseIdentifier:@"cell"];
+    
 //    [self.collectionView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin &UIViewAutoresizingFlexibleRightMargin];
 }
 
@@ -45,7 +48,6 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
 
     HomeHeadViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor greenColor];
     cell.label.text = self.dataSource[indexPath.row];
     return cell;
 }
@@ -61,16 +63,66 @@
     
     cell.label.textColor = [UIColor redColor];
     self.currentCell.label.textColor = [UIColor darkGrayColor];
+//    cell.label.progress = _progress;
+
     self.currentCell = cell;
+    
+    if (indexPath.row > 2 && indexPath.row < 6) {
+        CGPoint point = CGPointMake(50 * (indexPath.row - 3), 0);
+        [self.collectionView setContentOffset:point animated:YES];
+    }
+  
+    if (_delegate && [_delegate respondsToSelector:@selector(homeHeadView:bindingContentWithIndexPath:)]) {
+        [_delegate homeHeadView:self bindingContentWithIndexPath:indexPath];
+    }
+    
+    
+    
+    
+}
+
+- (void)scrollWithArgs:(NSArray *)args animation:(BOOL)animation{
+
+//    _progress = [args[1] floatValue];
+//    
+//    HomeHeadViewCell *cell = (HomeHeadViewCell *)[self.collectionView cellForItemAtIndexPath:args[0]];
+//    
+//    cell.label.progress = _progress;
+//    
+//    NSLog(@"%.2f", _progress);0[self 0collectionView:self.collectionView didSelectItemAtIndexPath:args[0]];
+    
+    //取出进度 旧的indexPath 新的indexPath
+    CGFloat trans = [args[0] floatValue];
+    NSIndexPath *oldIndexPath = args[1];
+    NSIndexPath *newIndexPath = args[2];
+    BOOL direction = [args[3] boolValue];
+    
+    //根据indexPath取cell
+    HomeHeadViewCell *oldCell = (HomeHeadViewCell *)[self.collectionView cellForItemAtIndexPath:oldIndexPath];
+    oldCell.label.isSelect = YES;
+    oldCell.label.direction = direction;
+    
+    HomeHeadViewCell *newCell = (HomeHeadViewCell *)[self.collectionView cellForItemAtIndexPath:newIndexPath];
+    newCell.label.isSelect = NO;
+    newCell.label.direction = direction;
+
+    
+    //设置进度
+    oldCell.label.progress = trans;
+    newCell.label.progress = trans;
+    
+    //判断进度
+    if (trans == 1.00) {
+        [self collectionView:self.collectionView didSelectItemAtIndexPath:newIndexPath];
+    }
     
 }
 
 
 
-
 - (void)select{
 
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:3 inSection:0];
     [self collectionView:self.collectionView didSelectItemAtIndexPath:indexPath];
 }
 

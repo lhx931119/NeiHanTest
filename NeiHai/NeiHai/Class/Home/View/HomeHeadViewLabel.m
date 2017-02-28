@@ -15,22 +15,37 @@
 
     [super drawRect:rect];
     
+    [self scrollWithRect:rect];
+    
+}
+
+- (void)scrollWithRect:(CGRect)rect{
+    
     if (self.isSelect) {
-        [[UIColor clearColor] set];
+        
+        [[UIColor darkGrayColor] set];
+        
     }else{
         [[UIColor redColor] set];
+        
     }
-    self.isSelect = !self.isSelect;
     CGRect fillRect = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width * self.progress, rect.size.height);
-    UIRectFillUsingBlendMode(fillRect, kCGBlendModeSourceAtop);
+    
+    UIRectFillUsingBlendMode(fillRect, kCGBlendModeSourceIn);
+    
 }
+
 
 
 - (void)setProgress:(CGFloat)progress   {
 
-    _progress = progress;
-    
-    [self setNeedsDisplay];
+    if (!_direction) {
+        _progress = 1 - progress;
+    }else {
+        _progress = progress;
+    }
+        [self setNeedsDisplay];
+
     
 }
 @end
