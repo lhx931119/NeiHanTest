@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="HomeContentViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="225" height="461"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="225" height="461"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LVy-Am-CAW">
+                        <rect key="frame" x="0.0" y="0.0" width="225" height="461"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                        <connections>
+                            <outlet property="dataSource" destination="gTV-IL-0wX" id="t4Y-qu-ELt"/>
+                            <outlet property="delegate" destination="gTV-IL-0wX" id="6a8-XO-6qs"/>
+                        </connections>
+                    </tableView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="LVy-Am-CAW" secondAttribute="trailing" id="7nz-2a-aLA"/>
+                <constraint firstAttribute="bottom" secondItem="LVy-Am-CAW" secondAttribute="bottom" id="DDq-Tr-bfi"/>
+                <constraint firstItem="LVy-Am-CAW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="GEh-9c-Rcd"/>
+                <constraint firstItem="LVy-Am-CAW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="mQJ-Hm-FYS"/>
+            </constraints>
+            <size key="customSize" width="225" height="461"/>
+            <connections>
+                <outlet property="tableView" destination="LVy-Am-CAW" id="Fb7-36-oOG"/>
+            </connections>
+            <point key="canvasLocation" x="29" y="47"/>
+        </collectionViewCell>
+    </objects>
+</document>

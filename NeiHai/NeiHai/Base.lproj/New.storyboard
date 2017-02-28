@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--新鲜事-->
+        <scene sceneID="iYC-6j-eG6">
+            <objects>
+                <viewController storyboardIdentifier="New" title="新鲜事" id="so1-f6-fkV" customClass="NewViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rHE-Qy-qmN"/>
+                        <viewControllerLayoutGuide type="bottom" id="Faw-yi-Gei"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gBn-ML-ZDb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="新鲜事" image="freshnew_night" selectedImage="freshnew_press" id="DEc-zr-jhk"/>
+                    <navigationItem key="navigationItem" id="bcP-Hv-eWe"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VUt-la-0cu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1670" y="-549"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="freshnew_night" width="23" height="26"/>
+        <image name="freshnew_press" width="23" height="26"/>
+    </resources>
+</document>
